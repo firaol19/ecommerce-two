@@ -1,0 +1,285 @@
+@font-face {
+    font-family: amagro;
+    src: url(fonts/Amagro.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+
+:root {
+    --header-height: 4rem;
+    /*#################### color ##########*/
+
+    --first-color: #abdff1;
+    --first-color-alt: hsl(129, 44%, 94%);
+    --second-color: #ef6c33;
+    --title-color: #0c4a60;
+    --text-color: hsl(0, 0%, 13%);
+    --text-color-light: hsl(60, 1%, 56%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: #0c4a60;
+    --border-color:hsl(129, 36%, 85%) ;
+    --border-color-alt: hsl(113, 15%, 90%) ;
+
+
+    /*##################### font #############*/
+
+    --body-font: "montserrat", sans-serif;
+    --second-font: "amagro", sans-serif;
+    --third-font: "Baskerville", sans-serif;
+    --biggest-font-size: 3.5rem;
+    --large-font-size: 1.125rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --h4-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .6875rem;
+
+
+    /*################ font weight ############*/
+
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+
+    /*############## Transition ############*/
+
+    --transition: cubic-bezier(0.71, 1.7, 0.77, 1.24);
+
+}
+/*############### responsive topography #######*/
+
+@media screen and (min-width: 1159px) {
+    :root{
+        --biggest-font-size: 5rem;
+        --bigger-font-size: 3rem;
+        --h1-font-size: 2.75rem;
+        --h2-font-size: 2rem;
+        --h3-font-size: 1.75rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+/*############## common #################*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body,textarea,input{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: var(--weight-400);
+}
+body{
+    background-color: var(--body-color);
+    
+}
+button,textarea,input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+h1, h2, h3, h4{
+    color: var(--title-color);
+    font-weight: var(--weight-600);
+    font-family: var(--second-font);
+}
+ul{
+    list-style: none;
+}
+p{
+    line-height: 1.5rem;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    max-width: 1320px;
+    margin-inline: 3.75rem;
+}
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.section{
+    padding-block: 4.5rem 1rem;
+}
+.section__title{
+    font-size: var(--h3-font-size);
+    font-family: var(--second-font);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.main{
+    overflow: hidden;
+}
+
+.form__input{
+    border: 1px solid var(--border-color-alt);
+    padding-inline: 1rem;
+    height: 45px;
+    border-radius: .25rem;
+    font-size: var(--small-font-size);
+}
+
+/*######################## body ########*/
+main{
+    background-color: var(--body-color);
+}
+
+.cloths{
+    padding: 5px;
+    border: 1px solid var(--title-color);
+    border-radius: 5px;
+    background-color: var(--body-color);
+    text-align: center;
+    max-width: 350px;
+    
+}
+.cloth{
+    background-color: #e1e1e1;
+    padding-top: 10px;
+    line-height: 1.5;
+}
+.cloths img{
+    height: 200px;
+}
+.new-price{
+    font-size: 20px;
+    color: var(--second-color);
+}
+.old-price{
+    font-size: 15px;
+    text-decoration: line-through;
+    color: gray;
+}
+.rating1 i {
+    color: hsl(42, 100%, 60%);
+    font-size: 20px;
+}
+.cart_btn1{
+    padding: 10px;
+    background-color: var(--second-color);
+    border-radius: 5px;
+    border: 3px solid var(--second-color);
+    margin-bottom: 10px;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: all .5s;
+}
+.cart_btn1:hover{
+    background-color: transparent;
+}
+.product_name{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: var(--weight-500);
+    font-family: var(--third-font);  
+}
+.clothes_container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-top: 30px;
+}
+
+/*####################### category nav ##############*/
+
+.active-tab{
+    color: var(--second-color) !important;
+}
+
+.tab-item:not(.active-tabs){
+    display: none;
+}
+
+/*###################### nav links ########*/
+
+.category_nav{
+    height: 100%;
+    width: 300px;
+    background-color: hsla(129, 44%, 94%, .8);
+    align-items: center;
+    line-height: 2;
+    padding-left: 50px;
+    padding-top: 70px;
+    position: absolute;
+    top: 140px;
+    left: -300px;
+    border-top: 1px solid var(--text-color);
+    transition: all .5s;
+
+}
+.category_nav ul li a{
+    color: var(--text-color);
+    font-size: large;
+}
+.category_nav ul li a:hover{
+    color: var(--second-color);
+}
+.category_nav i{
+    cursor: pointer;
+}
+.category_nav .right-btn {
+    position: absolute;
+    top: 40%;
+    right: -50px;
+    color: var(--second-color);
+    font-size: var(--h2-font-size);
+}
+.category_nav .left-btn{
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    color: var(--second-color);
+    font-size: var(--h2-font-size);
+}
+
+/*##################### for Other media #################*/
+
+@media screen and (max-width: 900px){
+    .clothes_container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (max-width: 710px){
+    .clothes_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 530px){
+    .clothes_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 400px){
+    .clothes_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .container{
+        margin-inline: 1.75rem;
+    }
+}

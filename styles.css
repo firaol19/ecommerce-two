@@ -1,0 +1,713 @@
+@font-face {
+    font-family: amagro;
+    src: url(fonts/Amagro.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+
+:root {
+    --header-height: 4rem;
+    /*#################### color ##########*/
+
+    --first-color: #abdff1;
+    --first-color-alt: hsl(129, 44%, 94%);
+    --second-color: #ef6c33;
+    --title-color: #0c4a60;
+    --text-color: hsl(0, 0%, 13%);
+    --text-color-light: hsl(60, 1%, 56%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: #0c4a60;
+    --border-color:hsl(129, 36%, 85%) ;
+    --border-color-alt: hsl(113, 15%, 90%) ;
+
+
+    /*##################### font #############*/
+
+    --body-font: "montserrat", sans-serif;
+    --second-font: "amagro", sans-serif;
+    --third-font: "Baskerville", sans-serif;
+    --biggest-font-size: 3.5rem;
+    --large-font-size: 1.125rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --h4-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .6875rem;
+
+
+    /*################ font weight ############*/
+
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+
+    /*############## Transition ############*/
+
+    --transition: cubic-bezier(0.71, 1.7, 0.77, 1.24);
+
+}
+/*############### responsive topography #######*/
+
+@media screen and (min-width: 1159px) {
+    :root{
+        --biggest-font-size: 5rem;
+        --bigger-font-size: 3rem;
+        --h1-font-size: 2.75rem;
+        --h2-font-size: 2rem;
+        --h3-font-size: 1.75rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+/*############## common #################*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body,textarea,input{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: var(--weight-400);
+}
+body{
+    background-color: var(--body-color);
+    
+}
+button,textarea,input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+h1, h2, h3, h4{
+    color: var(--title-color);
+    font-weight: var(--weight-600);
+    font-family: var(--second-font);
+}
+ul{
+    list-style: none;
+}
+p{
+    line-height: 1.5rem;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    max-width: 1320px;
+    margin-inline: 3.75rem;
+}
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+.new__price{
+    color: var(--first-color);
+    font-weight: var(--weight-600);
+}
+.old__price{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    text-decoration: line-through;
+}
+.section{
+    padding-block: 4.5rem 1rem;
+}
+.section__title{
+    font-size: var(--h3-font-size);
+    font-family: var(--second-font);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.main{
+    overflow: hidden;
+}
+
+.form__input{
+    border: 1px solid var(--border-color-alt);
+    padding-inline: 1rem;
+    height: 45px;
+    border-radius: .25rem;
+    font-size: var(--small-font-size);
+}
+
+/*################## header ####################*/
+.header{
+    background-color: var(--first-color);
+    position: fixed;
+}
+
+.top_header{
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    column-gap: 4rem;
+}
+.top_content{
+    display: flex;
+}
+.logo{
+    color: var(--second-color);
+    padding-top: 10px;
+    font-size: var(--h3-font-size);
+}
+.search{
+    position: relative;
+}
+.search input{
+    background-color: var(--body-color);
+    padding: .5rem;
+    width: 500px;
+    border-radius: 5px;
+}
+.search i {
+    position: absolute;
+    top: .75rem;
+    right: .8rem;
+    padding-left: .3rem;
+    color: var(--second-color);
+    cursor: pointer;
+}
+.cart_content{
+    padding: 7px;
+    margin-left: 10px;
+    display: flex;
+    column-gap: 13px;
+}
+.wish,.cart1{
+    position: relative;
+    cursor: pointer;
+}
+.count{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background-color: #ef6c33;
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--title-color);
+    
+}
+.cart_content i{
+    color: var(--second-color);
+    font-size: var(--h3-font-size);
+    margin-right: 5px;
+    cursor: pointer;
+}
+.customer_name{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    background-color: hsl(42, 100%, 60%);
+    color: var(--title-color);
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 2px;
+}
+.bottom_header{
+    background-color: var(--first-color-alt);
+    padding-inline: 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.second-half-nav {
+    display: flex;
+    column-gap: 1rem;
+}
+.bottom_header ul{
+    display: flex;
+    justify-content: space-between;
+}
+.bottom_header ul li a{
+    font-size: 17px;
+    font-family: var(--third-font);
+    font-weight: var(--weight-600);
+    color: var(--title-color);
+}
+.active{
+    color: var(--second-color) !important;
+}
+.social i{
+    font-size: var(--h3-font-size);
+    color: var(--second-color);
+    margin-right: 6px;
+    cursor: pointer;
+}
+.social{
+    padding-top: 5px;
+    margin-left: 10px;
+}
+.drop_down{
+    display: none;
+}
+.bottom_header .search{
+    display: none;
+}
+
+
+
+/*##################### animation banner ############*/
+
+.banner_animation{
+    overflow: hidden;
+    position: relative;
+    background-color: var(--first-color-alt)
+}
+.swiper-wrapper img{
+    width: 100%;
+    height: 350px;
+}
+
+/*############ fashion product ###########*/
+
+.fashion_product,
+.accessories_product,
+.home_product{
+    padding-top: 3rem;
+}
+.section_title{
+    color: var(--second-color);
+    padding-bottom: 2rem;
+}
+
+.fashion,
+.accessories,
+.home-garden{
+    padding: 5px;
+    border: 1px solid var(--title-color);
+    border-radius: 5px;
+    background-color: #e1e1e1;
+    text-align: center;
+}
+.fashion  img,
+.accessories  img,
+.home-garden img{
+    height: 200px;
+}
+.fashion_content,
+.accessories_content,
+.home_content{
+    background-color: var(--body-color);
+    padding-top: 10px;
+}
+.new_price {
+    font-size: 20px;
+    color: var(--second-color);
+}
+.old_price{
+    text-decoration: line-through;
+    font-size: 15px;
+    color: #0c4a60;
+}
+
+.rating i {
+    color: hsl(42, 100%, 60%);
+    font-size: 20px;
+}
+.cart_btn{
+    padding: 10px;
+    background-color: var(--second-color);
+    border-radius: 5px;
+    border: 3px solid var(--second-color);
+    margin-bottom: 10px;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: all .5s;
+}
+.cart_btn:hover{
+    background-color: transparent;
+}
+.fashion_product,
+.accessories_product,
+.home_product{
+    overflow: hidden;
+}
+.category_name, .product_name{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: var(--weight-500);
+    font-family: var(--third-font);  
+}
+.swiper{
+    overflow: initial !important ;
+}
+.swiper-button-next:not(.swiper-button-next.animo) i,
+.swiper-button-prev:not(.swiper-button-prev.animo) i{
+    color: var(--text-color);
+}
+.swiper-button-next:not(.swiper-button-next.animo),
+.swiper-button-prev:not(.swiper-button-prev.animo){
+    top: -2rem !important ; 
+    border: 1px solid var(--border-color);
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 50%;
+    background-color: var(--first-color-alt);
+}
+.swiper-button-prev:not(.swiper-button-prev.animo){
+    left: initial !important ;
+    right: 40px !important ;
+}
+.swiper-button-next:not(.swiper-button-next.animo)::after,
+.swiper-button-prev:not(.swiper-button-prev.animo)::after{
+    content: "" !important ;
+    
+}
+
+/*##################### Banner #########*/
+
+.ad_section{
+    position: relative;
+    height: auto;
+    margin-top: 50px;
+    padding-bottom: 30px;
+
+}
+.banner_image, 
+.banner_shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+.banner_shadow{
+    background: linear-gradient(180deg,
+                hsl(0, 0%, 80%),
+                hsla(0, 0%, 4%, .1)50%,
+                hsl(0, 0%, 60%) 100%);
+}
+.section_title-banner{
+    z-index: 4;
+    padding-top: 50px;
+    width: 50%;
+    margin-left: 30px;
+    line-height: 1.5;
+    font-weight: var(--weight-400);
+
+}
+.banner_content1{
+    display: flex;
+    margin-top: 40px;
+    gap: 25px;
+    padding: 30px;
+}
+.title_content{
+    padding: 15px 25px;
+    font-size: var(--h3-font-size);
+    font-family: var(--third-font);
+    color: var(--title-color);
+}
+.banner_content1 img{
+    width: 200px;
+    height: 100px;
+    margin-left: 25px;
+}
+.detail_content{
+    padding: 15px 25px;
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    font-family: var(--third-font);
+}
+.learn_more{
+    padding: 15px 25px;
+    color: var(--title-color);
+    font-size: var(--h3-font-size);
+    font-family: var(--third-font);
+    text-decoration: underline;
+}
+.quality_content,
+.protect_content{
+    background-color: var(--border-color);
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+
+
+/*############# sign up #############*/
+.registration{
+    display: grid;
+    justify-content: center;
+}
+
+
+.signup_section{
+    margin-top: 30px;
+    
+}
+.signup_container{
+    display: grid;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    text-align: center;
+    height: auto;
+    line-height: 3;
+    background: linear-gradient(180deg,
+                hsl(17, 85%, 60%),
+                hsla(17, 80%, 60%, .1)50%,
+                hsl(17, 85%, 65%) 100%);
+}
+.signup_title{
+    font-size: 30px;
+    color: var(--second-color);
+}
+.signup_detail{
+    font-size: 20px;
+    color: var(--title-color);
+}
+.signup_btn{
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--second-color);
+    border-radius: 50px;
+    margin-top: 20px;
+    width: 150px;
+    position: relative;
+    justify-self: center;
+    
+}
+/*############## Register #####################*/
+
+.register,
+.login{
+    background-color: #ef6c33;
+    width: fit-content;
+    padding: 60px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    z-index: 100;
+
+}
+.register h2,
+.login h2{
+    justify-self: center;
+    margin-bottom: 20px;
+    margin-left: 35%;
+}
+.register p,
+.login p{
+    font-size: var(--h4-font-size);
+    margin-bottom: 5px;
+}
+.register input,
+.login input{
+    padding: 10px;
+    background-color: var(--body-color);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.register span,
+.login span{
+    cursor: pointer;
+    color: var(--title-color-color);
+}
+.submit-btn{
+    width: 210px;
+    margin-top: 20px;
+    color: #ef6c33;
+    background-color: var(--title-color) !important;
+}
+.login{
+    display: none;
+}
+
+
+
+
+
+
+
+/*##################### footer ################*/
+footer{
+    background-color: hsl(129, 44%, 94%);
+    padding-top: 50px;
+}
+.footer__container{
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+}
+.footer__contact img{
+    width: 100px;
+    position: absolute;
+    top: -45px;
+}
+.contact{
+    margin-bottom: 2rem;
+    margin-top: 50px;
+}
+.contact p {
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+.follow__me a i{
+    color: var(--second-color);
+    padding-right: 10px;
+    cursor: pointer;
+}
+.footer__address div p a,
+.footer__account div p a{
+    line-height: 2.5;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+.footer__payment img{
+    width: 40px;
+    padding-right: 5px;
+}
+.footer__copyright{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    border-top: 1px solid var(--text-color-light);
+}
+.footer__copyright p{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    padding: 10px;
+    font-family: var(--third-font);
+}
+.footer__address div p:hover,
+.footer__account div p:hover{
+    transform: translate(5px, -2px);
+}
+.footer .section__title{
+    font-size: 20px;
+    font-family: var(--third-font);
+    font-weight: var(--weight-600);
+}
+
+/*################ For large Device ###########*/
+
+@media screen and (max-width: 1055px){
+    .search input{
+        width: 400px;
+    }
+    .second-half-nav{
+        display: none;
+    }
+    .drop_down{
+        display: inline;
+        cursor: pointer;
+        margin-left: 100px;
+    }
+    .more,
+    .categories,
+    .drop_down-btn {
+        font-size: 17px;
+        font-family: var(--third-font);
+        font-weight: var(--weight-600);
+        color: var(--title-color);
+        padding-right: 30px;
+    }
+    .categories{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 956px){
+    .search input{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 855px){
+    .top_header .search{
+        display: none;
+    }
+    .top_header{
+        justify-content: space-between;
+    }
+    .bottom_header .search{
+        display: inline;
+    }
+    .hiden-list{
+        display: none;
+    }
+    .categories{
+        display: inline;
+    }
+    .more{
+        display: none;
+    }
+    .drop_down{
+        padding-top: 10px;
+    }
+
+}
+
+/*################## for medium device ##############*/
+
+@media screen and (max-width: 695px){
+    .drop_down{
+        margin-left: 0;
+    }
+    .banner_content1{
+        flex-direction: column;
+    }
+    .section_title-banner{
+        width: 90%;
+    }
+    .footer__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/*################# for small device #############*/
+
+
+@media screen and (max-width: 600px){
+    .top_header{
+        
+    }
+    .bottom_header ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .social{
+        display: none;
+    }
+    .container{
+        margin-inline: 1.75rem;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    .footer__container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+
+
+
+
